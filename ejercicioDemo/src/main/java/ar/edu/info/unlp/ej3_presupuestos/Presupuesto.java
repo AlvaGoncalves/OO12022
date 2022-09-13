@@ -18,9 +18,8 @@ public class Presupuesto {
 	public double calcularTotal() {
 		double tot = 0;
 		int i = 1;
-		while(!Items.isEmpty()) {
-			tot += Items.get(i).costo();
-			i++;
+		for(Item item : Items) {
+			tot += item.getCostoUnitario();
 		}
 		
 		return tot;
