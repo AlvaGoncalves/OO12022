@@ -11,13 +11,17 @@ public class Presupuesto {
 	private List<Item> Items = new ArrayList<Item>();
 	
 	public void agregarItem(Item item) {
-		
+		Items.add(item);
 	}
 	
 	
 	public double calcularTotal() {
-		double tot;
-		
+		double tot = 0;
+		int i = 1;
+		while(!Items.isEmpty()) {
+			tot += Items.get(i).costo();
+			i++;
+		}
 		
 		return tot;
 	}
